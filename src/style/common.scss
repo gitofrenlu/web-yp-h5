@@ -1,0 +1,155 @@
+// 子元素居中对齐 兼容
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex_align_center{
+  align-items: center;
+  -webkit-align-items:center;
+  box-align:center;
+  -moz-box-align:center;
+  -ms-flex-align: center;
+  -webkit-box-align:center;
+}
+
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex-pack-justify-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.text_align_center{
+  text-align: center; /*IE*/
+  text-align: -moz-center; /*Firefox*/
+  text-align: -webkit-center; /*Chrome*/
+}
+
+#app{
+  background-color: #F7F7F7;
+  padding-top: 0.1rem;
+  font-size: .16rem;
+  color: #333333;
+  height: 100%;
+
+  .container{
+    @extend .flex;
+    @extend .flex-v;
+    overflow: hidden;
+
+    .title{
+      height: .7rem;
+      line-height: .7rem;
+      font-size: .3rem;
+      text-align: center;
+      background-color: #fff;
+      margin-bottom: .1rem;
+    }
+    .content{
+      @extend .flex;
+      @extend .flex-pack-justify-between;
+      @extend .flex_align_center;
+      overflow-x: hidden;
+      background-color: #fff;
+      padding-left: .15rem;
+      padding-right: .15rem;
+    }
+    .footer{
+      height: .8rem;
+      text-align: center;
+      margin-top: .8rem;
+
+      button{
+        @extend .yellow_background;
+        height: 100%;
+        border-radius: 10px;
+        width: 90%;
+        font-size: .3rem;
+        border: none;
+        border-right: 2px solid #aaa;
+        border-bottom: 2px solid #aaa;
+      }
+      button:active{
+        border:none;
+      }
+    }
+  }
+  .after{
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      background-color:  rgba(229,229,229,.4);
+      bottom: 0;
+      right: 0;
+      width: 3.65rem;
+    }
+  }
+  .noData{
+    text-align: center;
+    margin: auto;
+    img{
+        width: 50%;
+        height: 50%;
+    }
+  }
+  .anticon{
+    color: #AAAAAA;
+  }
+  .hidden{
+    visibility: hidden;
+  }
+  .red{
+    color: #f44336;
+  }
+  .yellow_background{
+    background-color: #f7d75c;
+  }
+  .blue{
+    color: #5A99F2;
+  }
+  .green{
+    color: #79DFAB;
+  }
+  .grey{
+    color: #666666;
+  }
+  .grey_light{
+    color: #AAAAAA;
+  }
+}
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.activebtn:active
+{
+    background: #e5e5e5;
+}
