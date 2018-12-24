@@ -21,11 +21,7 @@ Vue.use(G);
 Vue.use(VueRouter)
 Vue.use(VueLocalStorage)
 
-$(document).ready(function () {
-    //设定标准rem
-    // document.documentElement.style.fontSize = window.innerWidth/3.75 + 'px'
 
-})
 
 const router = new VueRouter({
   routes

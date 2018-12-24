@@ -21,9 +21,12 @@
 </template>
 
 <script>
+import { base } from "@/components/mixins/baseCheck";
+
 export default {
 	name: 'app',
 	components: {},
+	mixins:[base],
 	data(){
 		return{
 			active:[
